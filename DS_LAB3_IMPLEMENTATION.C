@@ -86,7 +86,7 @@ void InfixToPostfix(char infix_exp[], char postfix_exp[])
     char item;
     char x;
 
-    push('(');
+    
     strcat(infix_exp,")");
 
     i=0;
