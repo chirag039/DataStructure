@@ -13,7 +13,7 @@ void insert(int item)
 		printf("Queue Overflow \n");
 		return;
 	}
-	if (front == -1)  
+	if (front == -1 && rear == -1)  
 	{
 		front = 0;
 		rear = 0;
@@ -32,7 +32,7 @@ void insert(int item)
 
 void del()
 {
-	if (front == -1)
+	if (front == -1 && rear == -1)
 	{
 		printf("Queue Underflow\n");
 		return ;
