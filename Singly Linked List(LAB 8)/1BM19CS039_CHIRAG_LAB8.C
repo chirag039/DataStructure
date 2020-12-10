@@ -1,4 +1,4 @@
-include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 struct node
@@ -7,14 +7,6 @@ struct node
 	struct node* next;
 };
 
-
-
-void qinsert();
-void qdisplay();
-void qdel();
-void spush();
-void spop();
-void sdisplay();
 struct  node *rear=NULL, *front =NULL, *top=NULL;
 
 struct node* getnode(int item)
@@ -268,37 +260,37 @@ int main()
 				{
 					do
 					{
-						printf("3: Insert\n4: Sort\n5: Reverse\n6: Concatenate with list 1\n7: Display list\n8: Go back to main menu\n9: Exit\n");
+						printf("1: Insert\n2: Sort\n3: Reverse\n4: Concatenate with list 2\n5: Display list\n6: Go back to main menu\n7: Exit\n");
 						scanf("%d", &n2);
 						switch(n2)
 						{
-							case 3: {
-									printf("Enter item to be inserted:  ");
+							case 1: {
+								printf("Enter item to be inserted:  ");
 									scanf("%d", &n);
 									head1 = insertfront(head1, n);
 									break;
 							        }
-							case 4: {
+							case 2: {
 									head1 = sort(head1);
 									break;
 								}
-							case 5: {
+							case 3: {
 									reverse(&head1);
 									break;
 								}
-							case 6: {
+							case 4: {
 									head1 = concatenate(head1, head2);
 									break;
 								}
-							case 7: {
+							case 5: {
 									display(head1);
 									break;
 								}
-							case 8: {
+							case 6: {
 									flag = 1;
 									break;
 								}
-							case 9: {
+							case 7: {
 									exit(0);
 								}
 							default: printf("Invalid input.\n");
@@ -309,52 +301,54 @@ int main()
 						}
 					}while(1);
 					break;
+
 				}
 			case 4: {
 					flag = 0;
 					do
 					{
-						printf("3: Insert\n4: Sort\n5: Reverse\n6: Concatenate with list 1\n7: Display list\n8: Go back to main menu\n9: Exit\n");
+						printf("1: Insert\n2: Sort\n3: Reverse\n4: Concatenate with list 2\n5: Display list\n6: Go back to main menu\n7: Exit\n");
 						scanf("%d", &n2);
 						switch(n2)
 						{
-							case 3: {
-									printf("Enter item to be inserted:  ");
+							case 1: {
+								printf("Enter item to be inserted:  ");
 									scanf("%d", &n);
-									head2 = insertfront(head2, n);
+									head1 = insertfront(head1, n);
 									break;
 							        }
+							case 2: {
+									head1 = sort(head1);
+									break;
+								}
+							case 3: {
+									reverse(&head1);
+									break;
+								}
 							case 4: {
-									head2 = sort(head2);
+									head1 = concatenate(head1, head2);
 									break;
 								}
 							case 5: {
-									reverse(&head2);
+									display(head1);
 									break;
 								}
 							case 6: {
-									head2 = concatenate(head2, head1);
-									break;
-								}
-							case 7: {
-									display(head2);
-									break;
-								}
-							case 8: {
 									flag = 1;
 									break;
 								}
-							case 9: {
+							case 7: {
 									exit(0);
 								}
 							default: printf("Invalid input.\n");
 						}
 						if(flag == 1)
 						{
-							flag = 0; break;
+							break;
 						}
 					}while(1);
 					break;
+
 				}
 			case 9: exit(0);
 			default: printf("Invalid input.\n");
