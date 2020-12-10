@@ -359,7 +359,7 @@ int main()
 			case 9: exit(0);
 			default: printf("Invalid input.\n");
 			}
-		}while(10);
+		}while(1);
 	return 0;
 	}
 
